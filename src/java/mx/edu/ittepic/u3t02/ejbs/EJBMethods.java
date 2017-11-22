@@ -26,6 +26,7 @@ import javax.persistence.QueryTimeoutException;
 import javax.persistence.TransactionRequiredException;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -117,9 +118,9 @@ public class EJBMethods {
         }
         return gson.toJson(m);
     }
-    @PUT
+    @DELETE
     @Path("/eliminar/{id}")
-    @Consumes({MediaType.TEXT_PLAIN})
+    @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
     public String deleteRole(@PathParam("id") String id){
         GsonBuilder builder = new GsonBuilder();
